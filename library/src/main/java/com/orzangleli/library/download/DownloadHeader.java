@@ -5,6 +5,7 @@ import com.orzangleli.library.util.StringUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>description：
@@ -22,9 +23,9 @@ class DownloadHeader {
     /**
      * http header
      */
-    private HashMap<String, List<String>> header;
+    private Map<String, List<String>> header;
 
-    private void addHeader(String name,String value) {
+    public void addHeader(String name, String value) {
         if (StringUtils.isEmpty(name) || StringUtils.isEmpty(value)) {
             throw new NullPointerException("Try to put null name or value into header");
         }
@@ -45,7 +46,9 @@ class DownloadHeader {
         }
     }
 
-
+    public Map<String, List<String>> getHeaders() {
+        return header;
+    }
 
 
 }
